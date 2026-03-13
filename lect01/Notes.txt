@@ -1,0 +1,19 @@
+npm install -g @angular/cli
+ng -v
+First Time By Modules => ng new Demo1 --no-standalone
+cd NameOfProject
+ng serve  // default port 4200 if want change use => ng serve --port PortNum
+
+Create Component => ng g c Name like Navbar  (c=> component)
+Download Bootstrap => npm i bootstrap
+ng bootstarp website => like bootstrap but write ts 
+ngx bootstrap also
+Angular Material
+
+create class pr interface inside models files that will display in view 
+	=> ng g ( i | class) Name 
+
+
+
+
+jsflow websites for js
