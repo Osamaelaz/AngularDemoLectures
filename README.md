@@ -14,6 +14,7 @@ More lectures will be added as the course progresses. Stay tuned for new content
 |--------|---------------|
 | [`lect01`](./lect01) | Angular CLI setup, Module-based project, Components (`header`, `footer`, `home`), Models (`class` & `interface`), Template syntax (`{{ }}`, `[binding]`, `@for`), Bootstrap 5, Routing setup, Signals |
 | [`lect02`](./lect02) | Standalone components, Two-way binding (`[(ngModel)]`), Structural directives (`*ngFor` + `trackBy`, `*ngIf`, `ng-container`), Attribute directives (`[ngClass]`, `[ngStyle]`), New control flow (`@switch`, `@for`, `@if`), Template reference variables, Category filtering, Product cart logic |
+| [`lect03`](./lect03) | Component interaction (`@Input`, `@Output`, `EventEmitter`), `ngOnChanges` lifecycle hook, Custom pipes (`SquarePipe`), Custom attribute directives (`HighlightCard`, `ElementRef`, `@HostListener`), Angular Signals (`signal`, `computed`, `effect`), Built-in pipes (`currency`, `date`), Parent–child architecture |
 
 ---
 
@@ -41,7 +42,7 @@ cd AngularDemoLectures
 ### 2. Open a lecture folder
 
 ```bash
-cd lect01   # or lect02
+cd lect01   # or lect02, lect03
 ```
 
 ### 3. Install dependencies

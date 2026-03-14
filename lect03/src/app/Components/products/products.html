@@ -1,0 +1,64 @@
+<!-- create products all data of product execpt catid section -->
+<div class="container my-4">
+  <!-- <h1 class="my-4">Total Order Price : {{ totalOrderPrice }}</h1> -->
+  <!-- <h2>Selected Category is : {{ selectedCatId }}</h2> -->
+  <!-- <button (click)="changeCat()"> change Category </button> -->
+  <!-- <div class="mb-3">
+    <label for="" class="form-label">Category</label>
+    <select class="form-select form-select-lg" name="" id="" (change)="(FilterProducts())" [(ngModel)]="selectedCatId">
+      <option value="0" selected>All</option>
+      <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+    </select>
+  </div> -->
+
+  <div class="row">
+    @for (product of filteredProducts; track product.id) {
+      <div class="col-md-3">
+        <!-- <div class="card mb-4 mx-3" appHighlightCard externalColor="green"> -->
+        <!-- <div class="card mb-4 mx-3" appHighlightCard="gray"> -->
+        <div class="card mb-4 mx-3">
+          <img [src]="product.imgUrl" class="card-img-top" alt="{{ product.name }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <!-- <p class="card-text">Price: {{ product.price | currency:'EUR'}} </p> -->
+            <!-- <p class="card-text">Price: {{ product.price | currency:'EUR':'code'}} </p> -->
+            <!-- <p class="card-text">Price: {{ product.price | currency:'EUR':'symbol'}} </p> -->
+            <!-- <p class="card-text">Price: {{ product.price | currency:'EGP': 'code'}} </p> -->
+            <!-- in EGP Symbol and code the same  -->
+            <p class="card-text">Price: {{ product.price | currency }}</p>
+            @switch (product.quantity) {
+              @case (0) {
+                <p class="text-danger">Out of Stock</p>
+              }
+              @case (1) {
+                <p class="text-warning">Last item available</p>
+              }
+              @default {
+                <p>Quantity: {{ product.quantity }}</p>
+              }
+            }
+            <!-- Template variable or Reference -->
+            <input
+              type="number"
+              #countInput
+              class="form-control mb-2"
+              placeholder="Enter quantity"
+            />
+            <button class="btn btn-primary w-100" (click)="buy(countInput.value, product.price)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <h2>No Product Found !!</h2>
+    }
+  </div>
+</div>
+
+<!-- <h2>{{myDate  | date:"shortDate"}}</h2> -->
+
+<!-- <h2>{{num | square:3}}</h2> -->
+<!-- <h2>{{num | square:3}}</h2> -->
+
+<!-- <img src="assets/"/> -->
