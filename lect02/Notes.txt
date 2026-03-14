@@ -1,0 +1,23 @@
+lect#02
+
+ng serve --o => Open browser after run
+solve warning of *ngFor by import CommonModule in used component
+use images in assets/images folder just start src from : assets/ and contineou for your image
+bs5-select => create select in html
+
+ModelBinding =>Two way Binding use [(ngModel)]="" handle in ts FormsModules
+directives => component like app-root,app-header
+	      structural like *ngFor 
+*ngFor by default have problem when change in data always read all data again not just the changed 
+so we use tarckby
+-= Cannot have two structural directive in same tag so use ng-container will not shown in dom
+
+[ngClass]="(product.quantity==1)?`red`:`blue`" => like [class.d-none] but in ngclass can have else value
+
+/*
+
+documentation topics
+1- Binding => https://angular.dev/guide/templates
+
+
+*/

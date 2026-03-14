@@ -1,0 +1,66 @@
+<!-- create products all data of product execpt catid section -->
+<div class="container mt-4">
+  <h1 class="my-4">Total Order Price : {{ totalOrderPrice }}</h1>
+  <h2>Selected Category is : {{ selectedCatId }}</h2>
+  <!-- <button (click)="changeCat()"> change Category </button> -->
+  <div class="mb-3">
+    <label for="" class="form-label">Category</label>
+    <select class="form-select form-select-lg" name="" id="" [(ngModel)]="selectedCatId">
+      <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+    </select>
+  </div>
+
+  <!-- <h2>Products</h2> -->
+  <div class="row">
+    <ng-container
+      *ngFor="let product of products; let i = index; let c = count; trackBy: trackItem"
+    >
+      <!-- <div class="col-md-3"
+    [class.d-none]="product.catId != selectedCatId" // filtration by category id   
+    > -->
+      <!-- <div class="col-md-3" *ngIf="product.quantity > 0"> -->
+      <div class="col-md-3">
+        <div class="card mb-4 mx-3" [ngStyle]="{border: (product.quantity == 1) ? '2px solid red' : '1px solid #ccc'}">
+          <img [src]="product.imgUrl" class="card-img-top" alt="{{ product.name }}" />
+          <div
+            class="card-body"
+            
+            [ngClass]="(product.quantity == 1) ? 'bg-warning' : 'bg-white'"
+            [style.backgroundColor]="product.quantity == 0 ? 'yellow' : 'white'"
+          >
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">Price: {{ product.price }} EGP</p>
+            <!-- <p class="card-text" *ngIf="product.quantity != 1; else lastItem">
+              Quantity: {{ product.quantity }}
+            </p>
+            <ng-template #lastItem>
+              <p>Last item available</p>
+            </ng-template> -->
+            <!-- Deprecated way -->
+            <!-- <div [ngSwitch]="product.quantity">
+              <p *ngSwitchCase="0" class="text-danger">Out of Stock</p>
+              <p *ngSwitchCase="1" class="text-warning">Last item available</p>
+              <p *ngSwitchDefault>Quantity: {{ product.quantity }}</p>
+            </div> -->
+            <!-- New way -->
+            @switch (product.quantity) {
+              @case (0) {<p class="text-danger">Out of Stock</p>}
+              @case (1) {<p class="text-warning">Last item available</p>}
+              @default {<p>Quantity: {{ product.quantity }}</p>}
+            }
+            <!-- Template variable or Reference -->
+            <input
+              type="number"
+              #countInput
+              class="form-control mb-2"
+              placeholder="Enter quantity"
+            />
+            <button class="btn btn-primary w-100" (click)="buy(countInput.value, product.price)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
