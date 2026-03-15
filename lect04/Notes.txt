@@ -1,0 +1,19 @@
+@empty{} //used with for when the list is empty
+create directive => ng g directive highlightCard
+private inside ctor => doing create private field and can access in all class
+@HostListener("mouseover) => make the element  sence with event and action
+externalcolor as attribute and use it inside directive but make him start with input and use it
+create Pipe=> ng g pipehighlightCard
+
+we use ngOnChange => that track all changes
+
+--skip-tests  => skip spec file
+
+signals => enhance performance for application
+computed is signal depend on another signal
+
+ofcourse use Signals in Products & aselectedCatId
+
+
+// JsonCrack
+//Primeng website 1:35

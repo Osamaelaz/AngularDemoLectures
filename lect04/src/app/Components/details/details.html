@@ -1,0 +1,19 @@
+<!-- Display Product Details With Modern View
+    name: string;
+    price: number;
+    quantity: number;
+    imgUrl: string;
+    catId:number; 
+-->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]="product?.imgUrl" alt="{{ product?.name }}" class="img-fluid rounded">
+    </div>
+    <div class="col-md-6">
+      <h2>{{ product?.name }}</h2>
+      <p class="text-muted">Price: ${{ product?.price }}</p>
+      <p>Quantity: {{ product?.quantity }}</p>
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
